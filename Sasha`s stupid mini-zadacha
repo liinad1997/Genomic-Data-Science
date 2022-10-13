@@ -1,0 +1,14 @@
+#функция specialize
+#мы даем ей значения f и arg
+#она возвращает функцию, которая делает f с arg и новыми аргументами
+
+def specialize (f, *arg1, **kwarg1):
+    def longdick (*arg2, **kwarg2):
+        return f(*arg1, *arg2, **kwarg1, **kwarg2)
+    return longdick     
+
+plus_one = specialize(sum, y=1)
+plus_one(10)
+
+just_two = specialize(sum, 1, 1)
+just_two()
